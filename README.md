@@ -1,1 +1,2 @@
-# fmway-script
+# Scripts
+A collection of my scripts
