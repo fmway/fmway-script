@@ -9,7 +9,6 @@ ${SUDO[@]} apt update
 ${SUDO[@]} apt install -y neovim python3-dev python3-pip fish build-essential clangd fzf tmux
 
 # setup fish
-# ${SUDO[@]} usermod codespace -s /usr/bin/fish
 ${SUDO[@]} apt-add-repository ppa:fish-shell/release-3
 ${SUDO[@]} apt update
 ${SUDO[@]} apt autoremove fish -y
@@ -19,6 +18,7 @@ cat > ~/.config/fish/functions/fish_greeting.fish <<EOF
 function fish_greeting
 end
 EOF
+${SUDO[@]} usermod codespace -s /usr/bin/fish
 
 # install font Meslo Nerd Fonts
 ${SUDO[@]} apt install wget fontconfig
