@@ -2,6 +2,10 @@
 SUDO=(sudo)
 # link workspace to home
 ln -sv /workspaces/* ~/
+
+[ -d ~/.config/fish/conf.d ] || mkdir -p ~/.config/fish/conf.d
+[ -d ~/.config/fish/functions ] || mkdir -p ~/.config/fish/functions
+
 ${SUDO[@]} apt update
 ${SUDO[@]} apt upgrade -y
 ${SUDO[@]} add-apt-repository ppa:neovim-ppa/unstable -y
@@ -13,7 +17,6 @@ ${SUDO[@]} apt-add-repository ppa:fish-shell/release-3 -y
 ${SUDO[@]} apt update
 ${SUDO[@]} apt autoremove fish -y
 ${SUDO[@]} apt install fish -y
-mkdir -p ~/.config/fish/functions
 cat > ~/.config/fish/functions/fish_greeting.fish <<EOF
 function fish_greeting
 end
