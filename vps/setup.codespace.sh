@@ -9,7 +9,7 @@ ${SUDO[@]} apt update
 ${SUDO[@]} apt install -y neovim python3-dev python3-pip fish build-essential clangd fzf tmux
 
 # setup fish
-${SUDO[@]} apt-add-repository ppa:fish-shell/release-3
+${SUDO[@]} apt-add-repository ppa:fish-shell/release-3 -y
 ${SUDO[@]} apt update
 ${SUDO[@]} apt autoremove fish -y
 ${SUDO[@]} apt install fish -y
@@ -22,7 +22,7 @@ ${SUDO[@]} usermod codespace -s /usr/bin/fish
 
 # install font Meslo Nerd Fonts
 ${SUDO[@]} apt install wget fontconfig
-wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip \
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
 cd ~/.local/share/fonts && unzip Meslo.zip && rm Meslo.zip && fc-cache -fv
 cd -
 
@@ -58,7 +58,7 @@ echo 'source $HOME/.local/share/fzf-obc/bin/fzf-obc.bash' >> ~/.bashrc
 # setup rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo 'source "$HOME/.cargo/env"' >> ~/.bashrc
-fish -c 'fish_add_path $HOME/.cargo/env'
+fish -c 'fish_add_path $HOME/.cargo/bin'
 
 # setup tmux
 # TODO
