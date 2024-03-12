@@ -64,4 +64,13 @@ echo 'source "$HOME/.cargo/env"' >> ~/.bashrc
 fish -c 'fish_add_path $HOME/.cargo/bin'
 
 # setup tmux
-# TODO
+cat >> ~/.tmux.conf <<EOF
+set-option -g default-shell /usr/bin/fish
+EOF
+
+
+# setup nano
+git clone https://github.com/fmway/nanorc /tmp/nanorc
+cp /tmp/nanorc/nanorc ~/.nanorc
+cp /tmp/nanorc/nano ~/.nano -rv
+rm -rf /tmp/nanorc
